@@ -1,3 +1,18 @@
-for i in range(32):
-  if i%4==0:
-    print(i)
+print("Введите 1, если будете вводить сначала числа, а затем знак и 2, если число, знак, число: ")
+a = int(input())
+if a == 1:
+    b = int(input())
+    c = int(input())
+    d = input()
+    if d == '+': print(b+c)
+    if d == '-': print(b-c)
+    if d == '*': print(b*c)
+    if d == '/': print(b/c)
+if a == 2:
+    c = input().split()
+    a = int(c[0])
+    b = int(c[2])
+    if c[1] == '+': print(a+b)
+    if c[1] == '-': print(a-b)
+    if c[1] == '*': print(a*b)
+    if c[1] == '/': print(a/b)
