@@ -69,3 +69,21 @@ for i in range(int(c)+1):
         k = a.count(str(i))
         ans = i
 print(ans)
+#Задача 3.8
+n = int(input())
+f = 1
+c = []
+d = 1
+for i in range(n):
+    a = int(input())
+    c.append(a)
+for j in c:
+    for k in c:
+        if j>k:
+            d += 1
+        if d == n//2 + 1:
+            print(j)
+            f = 0
+            break
+    if f == 0:
+        break
