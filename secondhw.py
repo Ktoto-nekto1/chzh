@@ -59,3 +59,13 @@ for i in range(len(s)):
             c = 1
     if c == 0:
         print(int(s[i]), end=' ')
+#Задача 3.7
+a = input().split()
+ans = 0
+k = 0
+c = max(a)
+for i in range(int(c)+1):
+    if a.count(str(i))>k:
+        k = a.count(str(i))
+        ans = i
+print(ans)
