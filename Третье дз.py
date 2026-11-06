@@ -32,3 +32,30 @@ for idx, size in enumerate(sample_sizes):
 
 plt.tight_layout()
 plt.show()
+#Задача 5.3
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('iris_data.csv')
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 7))
+species_counts = df['Species'].value_counts()
+ax1.pie(species_counts, labels = species_counts.index, autopct='%1.1f%%', startangle=90)
+ax1.set_title('Распределение по видам ирисов')
+
+petal_length = df['PetalLengthCm']
+
+conditions = [
+    petal_length<=1.2,
+    (petal_length<=1.5) &(petal_length>1.2),
+    petal_length>1.5
+]
+
+labels = ['<=1.2cm', '1.2cm-1.5cm', '>1.5cm']
+
+petal_counts = pd.cut(petal_length, bins=[0, 1.2, 1.5, 100], labels=labels).value_counts()
+
+ax2.pie(petal_counts, labels=petal_counts.index, autopct='%1.1f%%', startangle=90)
+
+plt.tight_layout()
+plt.show()
